@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'dj_rest_auth',
     'user',
     'core',
+    'front',
 ]
 
 SITE_ID = 1
