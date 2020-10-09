@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.twitter',
+    'allauth.socialaccount.providers.github',
     'dj_rest_auth.registration',
     'rest_framework',
     'rest_framework.authtoken',
@@ -54,6 +55,7 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -6,4 +6,8 @@
     <h3>Signup</h3><hr/>
     {% include "fragments/signup_form.html" %}
   </div>
+
+{% load socialaccount %}
+
+<a href="{% provider_login_url "github" %}">Github</a>
 {% endblock %}
