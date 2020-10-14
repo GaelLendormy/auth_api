@@ -16,15 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
+auth_patterns = [
+    path('', include('dj_rest_auth.urls')),
+    path('social/', include('social.urls')),
+    path(
+        'registration/',
+        include('dj_rest_auth.registration.urls')
+    ),
+    path('accounts/', include('allauth.urls')),
+]
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/user/', include('user.urls')),
-    path('dj-rest-auth/', include('dj_rest_auth.urls')),
-    path(
-        'dj-rest-auth/registration/',
-        include('dj_rest_auth.registration.urls')
-    ),
-    path('dj-rest-auth/', include('social.urls')),
-    path('accounts/', include('allauth.urls')),
+    path('api/auth/', include(auth_patterns)),
     path('', include('front.urls')),
 ]
