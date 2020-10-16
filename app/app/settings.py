@@ -55,8 +55,20 @@ INSTALLED_APPS = [
     'front',
 ]
 
+REST_SESSION_LOGIN = True
 SITE_ID = 1
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+    )
+}
+
+REST_USE_JWT = True
+JWT_AUTH_COOKIE = 'ppledex'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -22,7 +22,9 @@
 
 {% block script %}
     <script type="text/javascript">
-      $().ready(function(){
+    $().ready(function(){
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
         $('#get-user-details').click(function(){
           var token = $('input[name=token]').val();
 
@@ -45,6 +47,9 @@
           var form = $('form');
           $.ajax({
             url: form.attr('action'),
+            headers: {
+                X_CSRFTOKEN: csrftoken,
+            },
             data: $('form').serialize(),
             type: "PUT",
             beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Token '+token);}

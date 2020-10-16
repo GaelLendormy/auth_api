@@ -3,7 +3,17 @@
 {% block content %}
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
-    <h1>dj-rest-auth demo</h1>
-    <p>Welcome in dj-rest-auth demo project!</p>
+    <h1>Ppledex</h1>
+    <p>Welcome to Ppledex your People Index!</p>
+    {% if user.is_authenticated %}
+      <p>User : {{ user }}</p>
+      <p>Username :{{ user.username }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>First name: {{ user.first_name }}</p>
+      <p>Last name: {{ user.last_name }}</p>
+      <p>Id: {{ user.id }}</p>
+      <p>Access token: {{ user.access_token }}</p>
+      <p>CSRF Token: {{ csrf_token }}</p>
+    {% endif %}
   </div>
 {% endblock %}

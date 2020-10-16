@@ -29,5 +29,5 @@ class TwitterLogin(SocialLoginView):
 class GitHubLogin(SocialLoginView):
     """Init Social Github Login"""
     adapter_class = GitHubOAuth2Adapter
-    callback_url = 'http://http://127.0.0.1:8000/accounts/github/login/callback/'
+    callback_url = 'http://http://127.0.0.1:8000/api/auth/accounts/github/login/callback/'
     client_class = OAuth2Client
