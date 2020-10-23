@@ -1,5 +1,8 @@
 from dj_rest_auth.registration.views import SocialLoginView
 
+# Google import
+from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
+
 # Facebook import
 from allauth.socialaccount.providers.facebook.views \
     import FacebookOAuth2Adapter
@@ -12,7 +15,11 @@ from dj_rest_auth.social_serializers import TwitterLoginSerializer
 # Github import
 from allauth.socialaccount.providers.github.views import GitHubOAuth2Adapter
 from allauth.socialaccount.providers.oauth2.client import OAuth2Client
-from dj_rest_auth.registration.views import SocialLoginView
+
+
+class GoogleLogin(SocialLoginView):
+    """Init Social Google Login"""
+    adapter_class = GoogleOAuth2Adapter
 
 
 class FacebookLogin(SocialLoginView):

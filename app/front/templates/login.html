@@ -7,5 +7,20 @@
   </div>
 {% load socialaccount %}
 
-<a href="{% provider_login_url 'github' %}">Github</a>
+<a class="btn btn-primary"
+   role="button"
+   href="{% provider_login_url 'google' %}">Google
+</a>
+<a class="btn btn-primary"
+   role="button"
+   href="{% provider_login_url 'twitch' %}">Twitch
+</a>
+<a class="btn btn-primary"
+   role="button"
+   href="{% provider_login_url 'facebook' %}">Facebook
+</a>
+<a class="btn btn-primary"
+   role="button"
+   href="{% provider_login_url 'instagram' %}">Instagram
+</a>
 {% endblock %}
